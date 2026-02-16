@@ -1,0 +1,34 @@
+# Notes
+- We are running a personal fork to facilitate the keeping of recordings
+- The repo (~/BirdNET-Pi) has two remotes: 'upstream' and 'myfork'
+- The 'myfork' remote has a 'picadeploy' branch which has our custom changes
+- To pull the latest updates from the main repo, we need to rebase our changes on top of the main repo's updates
+
+# To do that
+1. Stop the app so it can be updated
+`~/BirdNET-Pi/scripts/stop_core_services.sh`
+
+2. Get the changes from upstream
+`git fetch upstream`
+
+3. Apply our custom changes on top of whatever the main repo has done
+`git rebase upstream/main`
+
+4. If there are any conflicts, resolve them (edit files) and then continue
+`git rebase --continue`
+
+5. [optional] push updates to our fork to make it visible off of the pi
+`git push myfork picodeploy`
+
+6. Restart birdnetpi
+`sudo ~/BirdNET-Pi/scripts/restart_services.sh`
+
+# To retrieve files
+- Check total size with
+`du -sh ~/BirdSongs/Archived`
+
+- Copy from another machine into local folder
+`scp pi@pica:~/BirdSongs/Archived/* ./`
+
+- Delete archive
+`rm ~/BirdSongs/Archived/*`
