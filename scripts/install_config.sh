@@ -176,6 +176,12 @@ REC_CARD=default
 
 PROCESSED=$HOME/BirdSongs/Processed
 
+## ARCHIVED is the directory where processed recordings are moved after analysis.
+ARCHIVED=$HOME/BirdSongs/Archived
+
+## ARCHIVE_MAX_MB sets a maximum size (in MB) for the `Archived` directory; 0 = unlimited
+ARCHIVE_MAX_MB=0
+
 ## EXTRACTED is the directory where the extracted audio selections are moved.
 
 EXTRACTED=$HOME/BirdSongs/Extracted

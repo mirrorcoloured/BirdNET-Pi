@@ -114,6 +114,11 @@ if ! grep -E '^MAX_FILES_SPECIES=' /etc/birdnet/birdnet.conf &>/dev/null;then
   echo "MAX_FILES_SPECIES=\"0\"" >> /etc/birdnet/birdnet.conf
 fi
 
+if ! grep -E '^ARCHIVE_MAX_MB=' /etc/birdnet/birdnet.conf &>/dev/null;then
+  echo "## Maximum size (MB) for Archived directory (0 = unlimited)" >> /etc/birdnet/birdnet.conf
+  echo "ARCHIVE_MAX_MB=\"0\"" >> /etc/birdnet/birdnet.conf
+fi
+
 if ! grep -E '^AUTOMATIC_UPDATE=' /etc/birdnet/birdnet.conf &>/dev/null;then
   echo "AUTOMATIC_UPDATE=0" >> /etc/birdnet/birdnet.conf
 fi
